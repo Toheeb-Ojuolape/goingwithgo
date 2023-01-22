@@ -7,6 +7,7 @@ import (
 	"log"
 	"math/rand"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -125,13 +126,13 @@ func main() {
 
 	for true {
 		fmt.Println("Guess a number between 1 and 50")
-		pl("Random number is : ", randNum)
+		// pl("Random number is : ", randNum)
 		guess, err := reader.ReadString('\n')
 		if err != nil {
 			log.Fatal(err)
 		}
 		guess = strings.TrimSpace(guess)
-		iGuess, err := strConv.Atoi(guess)
+		iGuess, err := strconv.Atoi(guess)
 		if err != nil {
 			log.Fatal(err)
 		}
